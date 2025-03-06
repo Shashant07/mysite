@@ -1,0 +1,365 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica.ttf");
+}
+
+
+* {
+  font-family: "Helvetica", sans-serif;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica", sans-serif;
+  /* background: linear-gradient(to bottom right,#CDFADB, #D2E0FB,#FFE2E2, #E0FBE2); */
+  color: rgb(15,15,15);
+}
+
+a{text-decoration: none;}
+main {
+  min-height: 80vh;
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+.rating svg {
+  color: #f8e825;
+}
+
+.rating-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 0.5rem;
+}
+
+.product-title {
+  height: 2.5em; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  white-space: nowrap; /* Prevent wrapping */
+  color: rgb(15,15,15);
+}
+
+.service-title {
+  height: 2.5em; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  white-space: nowrap; /* Prevent wrapping */
+  color: rgb(15,15,15);
+}
+
+table td,
+table th {
+  text-align: center;
+}
+
+.review {
+  margin-top: 30px;
+}
+
+.review h2 {
+  font-size: 24px;
+  background: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.review button {
+  margin-top: 10px;
+}
+
+.carousel-caption {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-text{
+  color: rgb(15,15,15);
+  font-weight:800;
+}
+.carouselItems{
+  text-decoration: none;
+}
+.carouselItems:hover{
+  opacity: 0.9;
+
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer CSS Start
+--------------------------------------------------------------*/
+.footer-element{
+  background-color: rgb(15,15,15);
+}
+
+.footerGetInTouch, .footerGetInTouch a, .footerQuickLinks, .footerQuickLinks a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footerGetInTouch a:hover, .footerQuickLinks a:hover{
+  color: lightseagreen;
+  cursor: pointer;
+}
+
+p .footerQuickLinks{
+  margin-bottom: 5px;
+}
+
+.footerLogo{
+  width: 50px;
+}
+
+.footerSiteHeading{
+  text-decoration: none;
+  color: lightseagreen;
+  border-bottom: 2px solid #999999;
+  margin-bottom: 0.8rem;
+}
+
+.footerSocialLinks{
+  /* background-color: #ffffff; */
+  color: #ffffff;
+  margin: 0 10px;
+}
+
+.footerSocialLinks:hover{
+  color: lightseagreen;
+}
+
+.footer-company-name a{
+  color: rgb(255,255,255,0.6);
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+.footer-company-name a:hover{
+  color: lightseagreen;
+}
+
+.footer-header{
+  margin-top: 10px;
+}
+/* @media (max-width: 600px) {
+
+  .footer-element{
+    text-align: center;
+  }
+} */
+/*--------------------------------------------------------------
+# Footer CSS End
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info-box {
+  margin: 2.5%;
+  padding: 15px;
+  width: 45%;
+  background: transparent;
+  border: 2px solid;
+}
+
+.contact .info-box i {
+  font-size: 38px;
+  line-height: 0;
+  color: #4154f1;
+}
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #012970;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  
+  box-shadow: none;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #4154f1;
+}
+
+.contact .php-email-form input {
+  padding: 10px 15px;
+}
+
+.contact .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #4154f1;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #5969f3;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.contact-form-link{
+  color: rgb(15,15,15);
+}
+
+.contact-form-link:hover{
+  color: lightseagreen;
+}
+
+/* -------------------------------------------------- */
+/* Contact us CSS :end */
+/* -------------------------------------------------- */
+
+/* ------------------------- */
+/* Home tagline CSS start */
+/* ------------------------- */
+.home-tagline{
+  background-color: rgb(15,15,15);
+  color: #f1f1f1;
+  display: block;
+  padding: 60px 0;
+  margin: 50px 0;
+
+}
+
+.home-tagline-col1{
+  margin: auto;
+}
+.home-tagline-col2{
+  margin: auto;
+  text-align: center;
+}
+.home-tagline-text1{
+  font-size: xx-large;
+
+}
+.home-tagline-text2{
+  font-size: larger;
+
+}
+
+.home-tagline-btn{
+  /* font-size: xx-large; */
+  vertical-align: middle;
+  font-size: larger;
+  border-radius: 50px;
+  padding: 10px 30px;
+}
+/* ------------------------- */
+/* Home Tagline end */
+/* ------------------------- */
+
+
+/*--------------------------------------------------------------
+# F.A.Q Page
+--------------------------------------------------------------*/
+.faq .basic h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4154f1;
+}
+
+.faq .basic p {
+  color: #6980aa;
+}
+
+/* ---------------------------------------
+FAQ page CSS End
+=========================================== */
+
+/* -------------------------
+start modal css
+----------------------------- */
+.btn-close {
+  background-color: transparent; /* Change close button background */
+  opacity: 1;
+  color: #ffffff!important;
+  filter: invert(100%)
+}
+
+.startModalCard{
+  background-color: rgb(38,38,38);
+  color: #ffffff;
+  margin: 10px 0;
+}
