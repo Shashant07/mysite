@@ -1,4 +1,4 @@
-import { Table, Button, Row, Col } from 'react-bootstrap';
+import { Table, Button, Row, Col, Container } from 'react-bootstrap';
 import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import Message from '../../components/Message';
@@ -47,10 +47,11 @@ const ServiceListScreen = () => {
   };
 
   return (
-    <>
+    <Container>
       <Row className='align-items-center'>
         <Col>
-          <h1>Services</h1>
+        <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Services</h1>
+                    
         </Col>
         <Col className='text-end'>
           <Button className='my-3' onClick={createServiceHandler}>
@@ -74,18 +75,18 @@ const ServiceListScreen = () => {
                 <th>ID</th>
                 <th>NAME</th>
                 <th>CATEGORY</th>
-                <th>Status</th>
+                <th>STATUS</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
               {data.services.map((service) => (
                 <tr key={service._id}>
-                  <td>${service.image}</td>
+                  <td><img src={service.image} alt="services" className='adminListServiceImg' /></td>
                   <td>{service._id}</td>
                   <td>{service.name}</td>
                   <td>{service.category}</td>
-                  <td>{service.status}</td>
+                  <td>{service.status ? "Available" : "Unavailable"}</td>
                   <td>
                     <Button
                       as={Link}
@@ -110,7 +111,7 @@ const ServiceListScreen = () => {
           <Paginate pages={data.pages} page={data.page} isAdmin={true} />
         </>
       )}
-    </>
+    </Container>
   );
 };
 

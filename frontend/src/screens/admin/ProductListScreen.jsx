@@ -1,4 +1,4 @@
-import { Table, Button, Row, Col } from 'react-bootstrap';
+import { Table, Button, Row, Col, Container } from 'react-bootstrap';
 import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import Message from '../../components/Message';
@@ -47,10 +47,10 @@ const ProductListScreen = () => {
   };
 
   return (
-    <>
+    <Container>
       <Row className='align-items-center'>
         <Col>
-          <h1>Products</h1>
+        <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Products</h1>
         </Col>
         <Col className='text-end'>
           <Button className='my-3' onClick={createProductHandler}>
@@ -70,6 +70,7 @@ const ProductListScreen = () => {
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
               <tr>
+                <th>Image</th>
                 <th>ID</th>
                 <th>NAME</th>
                 <th>PRICE</th>
@@ -81,6 +82,7 @@ const ProductListScreen = () => {
             <tbody>
               {data.products.map((product) => (
                 <tr key={product._id}>
+                  <td><img src={product.image} alt="Products" className='adminListProductImg' /></td>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
                   <td>${product.price}</td>
@@ -110,7 +112,7 @@ const ProductListScreen = () => {
           <Paginate pages={data.pages} page={data.page} isAdmin={true} />
         </>
       )}
-    </>
+    </Container>
   );
 };
 

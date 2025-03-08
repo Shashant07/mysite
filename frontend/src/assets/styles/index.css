@@ -363,3 +363,9 @@ start modal css
   color: #ffffff;
   margin: 10px 0;
 }
+
+.adminListServiceImg, .adminListProductImg{
+  width: 150px;
+  border: 2px solid white;
+  border-radius: 5px;
+}

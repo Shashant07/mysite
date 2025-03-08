@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import FormContainer from '../../components/FormContainer';
@@ -83,12 +83,13 @@ const ProductEditScreen = () => {
   };
 
   return (
-    <>
+    <Container>
       <Link to='/admin/productlist' className='btn btn-light my-3'>
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+      <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Edit Product</h1>
+                    
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
@@ -182,7 +183,7 @@ const ProductEditScreen = () => {
           </Form>
         )}
       </FormContainer>
-    </>
+    </Container>
   );
 };
 

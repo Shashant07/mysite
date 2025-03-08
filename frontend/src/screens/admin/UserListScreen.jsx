@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Container } from 'react-bootstrap';
 import { FaTrash, FaEdit, FaCheck, FaTimes } from 'react-icons/fa';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
@@ -27,8 +27,9 @@ const UserListScreen = () => {
   };
 
   return (
-    <>
-      <h1>Users</h1>
+    <Container>
+      <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Users</h1>
+                    
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -88,7 +89,7 @@ const UserListScreen = () => {
           </tbody>
         </Table>
       )}
-    </>
+    </Container>
   );
 };
 

@@ -26,6 +26,7 @@ const AllServices = () => {
             ) : (
                 <>
                     {/* <Meta /> */}
+                    <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Exclusive Offerings</h1>
                     <Row>
                         {data.services.map((service) => (
                             <Col key={service._id} sm={12} md={6} lg={4} xl={3}>

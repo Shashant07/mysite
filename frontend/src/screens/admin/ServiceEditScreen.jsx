@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import FormContainer from '../../components/FormContainer';
@@ -91,12 +91,13 @@ const ServiceEditScreen = () => {
   };
 
   return (
-    <>
+    <Container>
       <Link to='/admin/servicelist' className='btn btn-light my-3'>
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Service</h1>
+      <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Edit Services</h1>
+                    
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
@@ -181,7 +182,7 @@ const ServiceEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId='status'>
-              <Form.Label></Form.Label>
+              <Form.Label>Status</Form.Label>
               <Form.Control
                 as='select'
                 required
@@ -203,7 +204,7 @@ const ServiceEditScreen = () => {
           </Form>
         )}
       </FormContainer>
-    </>
+    </Container>
   );
 };
 

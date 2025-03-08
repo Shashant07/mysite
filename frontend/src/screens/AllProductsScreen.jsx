@@ -6,8 +6,9 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Paginate from '../components/Paginate';
 
 import { useGetProductsQuery } from '../slices/productsApiSlice';
-import Product from '../components/Product';
+// import Product from '../components/Product';
 import ProductCarousel from '../components/ProductCarousel';
+import AllProducts from '../components/AllProducts';
 
 
 const AllProductsScreen = () => {
@@ -36,22 +37,7 @@ const AllProductsScreen = () => {
                     {error?.data?.message || error.error}
                 </Message>
             ) : (
-                <>
-                    {/* <Meta /> */}
-                    <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Unique Creations</h1>
-                    <Row>
-                        {data.products.map((product) => (
-                            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                                <Product product={product} />
-                            </Col>
-                        ))}
-                    </Row>
-                    <Paginate
-                        pages={data.pages}
-                        page={data.page}
-                        keyword={keyword ? keyword : ''}
-                    />
-                </>
+                <AllProducts />
             )}
         </Container>
 

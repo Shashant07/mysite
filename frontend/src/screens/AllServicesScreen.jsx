@@ -6,8 +6,9 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Paginate from '../components/Paginate';
 
 import { useGetServicesQuery } from '../slices/servicesApiSlice';
-import Service from '../components/Service';
+// import Service from '../components/Service';
 import ServiceCarousel from '../components/ServiceCarousel';
+import AllServices from '../components/AllServices';
 
 const AllServicesScreen = () => {
     const { pageNumber, keyword } = useParams();
@@ -35,22 +36,7 @@ const AllServicesScreen = () => {
                     {error?.data?.message || error.error}
                 </Message>
             ) : (
-                <>
-                    {/* <Meta /> */}
-                    <h1 className="card-title" style={{ fontWeight: "bold", letterSpacing: "2px", margin: "20px 0" }}>Exclusive Offerings</h1>
-                    <Row>
-                        {data.services.map((service) => (
-                            <Col key={service._id} sm={12} md={6} lg={6} xl={4}>
-                                <Service service={service} />
-                            </Col>
-                        ))}
-                    </Row>
-                    <Paginate
-                        pages={data.pages}
-                        page={data.page}
-                        keyword={keyword ? keyword : ''}
-                    />
-                </>
+               <AllServices />
             )}
         </Container>
     )
