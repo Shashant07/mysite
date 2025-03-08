@@ -102,7 +102,7 @@ const ServiceScreen = () => {
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {service.status === 'true' ? 'Available' : 'Unavailable'}
+                        {service.status ? 'Available' : 'Unavailable'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
