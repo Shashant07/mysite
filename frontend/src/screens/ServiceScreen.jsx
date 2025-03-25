@@ -88,7 +88,7 @@ const ServiceScreen = () => {
                 <ListGroup.Item>
                   <Rating
                     value={service.rating}
-                    text={`${service.numReviews} reviews`}
+                    text={`${Number(service.rating.toFixed(1))} / 5  Ratings`}
                   />
                 </ListGroup.Item>
                 {/* <ListGroup.Item>Price: $</ListGroup.Item> */}
@@ -98,14 +98,14 @@ const ServiceScreen = () => {
               </ListGroup>
               <Card>
                 <ListGroup variant='flush'>
-                  <ListGroup.Item>
+                  {/* <ListGroup.Item>
                     <Row>
                       <Col>Status:</Col>
                       <Col>
                         {service.status ? 'Available' : 'Unavailable'}
                       </Col>
                     </Row>
-                  </ListGroup.Item>
+                  </ListGroup.Item> */}
 
                   {/* Qty Select */}
                   {/* {service.countInStock > 0 && (
@@ -152,10 +152,10 @@ const ServiceScreen = () => {
               <ListGroup variant='flush'>
                 {service.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
-                    <strong>{review.name}</strong>
-                    <Rating value={review.rating} />
-                    <p>{review.createdAt.substring(0, 10)}</p>
-                    <p>{review.comment}</p>
+                    <strong>{review.name} <span style={{"float": "right"}}><Rating value={review.rating}/></span> </strong>
+                    <p><li>{review.comment}</li></p>
+                    <p><small>{review.createdAt.substring(0, 10)}</small></p>
+                    
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>

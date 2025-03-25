@@ -26,7 +26,7 @@ const Service = ({ service }) => {
                 <Card.Text as='div'>
                   <Rating
                     value={service.rating}
-                    text={`${service.numReviews} reviews`}
+                    text={`(${Number(service.rating.toFixed(1))} / 5)`}
                   />
                 </Card.Text>
                 <Card.Text as='small'>{truncateText(service.oneLine, 45)}</Card.Text>

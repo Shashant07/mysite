@@ -92,10 +92,10 @@ const ProductScreen = () => {
                 <ListGroup.Item>
                   <Rating
                     value={product.rating}
-                    text={`${product.numReviews} reviews`}
+                    text={`${Number(product.rating.toFixed(1))} / 5  Ratings`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Price: ₹ {product.price}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -108,7 +108,7 @@ const ProductScreen = () => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>₹ {product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -166,10 +166,9 @@ const ProductScreen = () => {
               <ListGroup variant='flush'>
                 {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
-                    <strong>{review.name}</strong>
-                    <Rating value={review.rating} />
-                    <p>{review.createdAt.substring(0, 10)}</p>
-                    <p>{review.comment}</p>
+                    <strong>{review.name} <span style={{"float": "right"}}><Rating value={review.rating}/></span> </strong>
+                    <p><li>{review.comment}</li></p>
+                    <p><small>{review.createdAt.substring(0, 10)}</small></p>
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>

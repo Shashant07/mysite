@@ -16,6 +16,11 @@ body {
   font-family: "Helvetica", sans-serif;
   /* background: linear-gradient(to bottom right,#CDFADB, #D2E0FB,#FFE2E2, #E0FBE2); */
   color: rgb(15,15,15);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
 }
 
 a{text-decoration: none;}
@@ -36,6 +41,10 @@ main {
   font-weight: 600;
   padding-left: 0.5rem;
 }
+
+/* .rating{
+  float: right;
+} */
 
 .product-title {
   height: 2.5em; /* Set a fixed height */
