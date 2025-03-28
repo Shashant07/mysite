@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import '../assets/styles/headerSidebar.css';
 import StartModal from "./StartModal";
-import { FaSignOutAlt, FaSignInAlt, FaQuestionCircle, FaShoppingCart, FaRegWindowClose, FaShoppingBasket, FaShippingFast, FaHome, FaRProject, FaProjectDiagram, FaServicestack } from 'react-icons/fa';
-import { FaRecycle, FaUser, FaBars, FaUserLarge, FaUsers, FaPeopleGroup, FaRegPenToSquare, FaRegAddressCard, FaQuestion, FaBookOpen, FaMessage} from 'react-icons/fa6';
-import { MdSecurity, MdDashboardCustomize, MdOutlineArrowDropDownCircle, MdPolicy  } from "react-icons/md";
+import { FaShoppingCart, FaSignOutAlt, FaSignInAlt, FaRegUserCircle, FaRegWindowClose, FaShoppingBasket, FaShippingFast, FaHome, FaProjectDiagram, FaServicestack } from 'react-icons/fa';
+import { FaBars, FaUsers, FaPeopleGroup, FaRegAddressCard, FaQuestion, FaBookOpen, FaMessage} from 'react-icons/fa6';
+import { MdDashboardCustomize, MdOutlineArrowDropDownCircle, MdPolicy  } from "react-icons/md";
 import { GrDocumentText } from "react-icons/gr";
 import { IoMdCube } from "react-icons/io";
 import { useSelector, useDispatch } from 'react-redux';
@@ -20,8 +20,8 @@ const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
 
-  const [isSidebar, setIsSidebar] = useState(false);
-  const [isUserProfile, setIsUserProfile] = useState(false);
+  // const [isSidebar, setIsSidebar] = useState(false);
+  // const [isUserProfile, setIsUserProfile] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Header = () => {
       // user doesn't inherit the previous users cart and shipping
       dispatch(resetCart());
       navigate('/login');
-      setIsUserProfile(false);
+      // setIsUserProfile(false);
     } catch (err) {
       console.error(err);
     }
@@ -54,6 +54,11 @@ const Header = () => {
             <SearchBox />
             <button className="btn btn-primary btn-sm btnGetStarted" onClick={() => setShowModal(true)} type="submit">Get Started</button>
           </div>
+          {userInfo ? (
+            <div className="dropdown">
+              <Link to='/profile'><FaRegUserCircle style={{ "color": "#fff", "width": "30px", "margin": "0 15px 0 5px", "height": "30px", "cursor": "pointer"}} title={userInfo.name}  /></Link>
+            </div>
+          ): ""}
     </nav>
       
       {/* Sidebar */}
@@ -96,6 +101,13 @@ const Header = () => {
               <span className='px-2'>Blogs</span>
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link text-white sidebarLinks" to="/cart" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+              <FaShoppingCart className="mb-1" />
+              <div className='px-2' style={{"display": "inline-block"}}>Cart <span style={{"color": "black", "background": "white", "borderRadius": "50px", "padding": "0px 5px", "fontWeight": "bold"}}>{cartItems.length}</span></div>
+            </Link>
+          </li>
+
           <hr />
 
           {userInfo && userInfo.isAdmin && (
