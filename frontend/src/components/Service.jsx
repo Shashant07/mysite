@@ -1,11 +1,12 @@
 import { Card, Row, Col} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
+import { truncateText } from '../utils/truncateText';
 
 const Service = ({ service }) => {
-  const truncateText = (text, maxLength) => {
-    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
-  };
+  // const truncateText = (text, maxLength) => {
+  //   return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  // };
   
   return (
     <>

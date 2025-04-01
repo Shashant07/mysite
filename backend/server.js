@@ -8,6 +8,8 @@ import productRoutes from './routes/productRoutes.js';
 import serviceRoutes from './routes/serviceRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
+import blogRoutes from './routes/blogRoutes.js';
+
 
 import orderRoutes from './routes/orderRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
@@ -27,6 +29,9 @@ app.use('/api/products', productRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
+app.use('/api/blogs', blogRoutes);
+
+
 app.use('/api/orders', orderRoutes);
 app.use('/api/upload', uploadRoutes);
 
